@@ -65,7 +65,7 @@ function difference(polygon1, polygon2) {
 function removeEmptyPolygon(geom) {
     switch (geom.type) {
     case 'Polygon':
-        if (area(geom) > 1) return geom;
+        if (area(geom) > 0.01) return geom;
         return null;
     case 'MultiPolygon':
         var coordinates = [];
